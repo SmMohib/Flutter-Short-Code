@@ -1,0 +1,60 @@
+import 'package:amarstory/HomePage.dart';
+import 'package:amarstory/ProfilePage.dart';
+import 'package:amarstory/VideoDemo.dart';
+import 'package:flutter/material.dart';
+
+class TabBarDemo extends StatelessWidget {
+  TabBarDemo({super.key});
+  late TabController _tabController;
+
+  @override
+  static const List<Tab> _tabs = [
+    const Tab(
+      icon: Icon(
+        Icons.home,
+        size: 40,
+      ),
+    ),
+    const Tab(
+        icon: Icon(
+      Icons.video_call,
+      size: 40,
+    )),
+    const Tab(
+        icon: Icon(
+      Icons.person,
+      size: 40,
+    )),
+  ];
+
+  static const List<Widget> _views = [
+    const Center(child: HomePage()),
+    const Center(child: VideoDemo()),
+    const Center(child: ProfilePage()),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 10,
+            bottom: TabBar(
+              physics: BouncingScrollPhysics(),
+              onTap: (int index) {
+                print('Tab $index is tapped');
+              },
+              tabs: _tabs,
+            ),
+          ),
+          body: const TabBarView(
+            physics: BouncingScrollPhysics(),
+            children: _views,
+          ),
+        ),
+      ),
+    );
+  }
+}

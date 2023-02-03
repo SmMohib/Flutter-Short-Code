@@ -1,0 +1,242 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:task_menagementapp/HomePage.dart';
+import 'package:task_menagementapp/Model/Color_Text.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen1.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen2.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen3.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen4.dart';
+
+class BtmNevBar extends StatefulWidget {
+  BtmNevBar({Key? key}) : super(key: key);
+
+  @override
+  State<BtmNevBar> createState() => _BtmNevBarState();
+}
+
+class _BtmNevBarState extends State<BtmNevBar> {
+//page Name BtmNebBar
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    HomePage(),
+    SplashScreen1(),
+    SplashScreen2(),
+    SplashScreen3(),
+  ];
+
+  void onTapBar(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+// end page Name BtmNebBar
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //page Name BtmNebBar _children
+      body: _children[_currentIndex],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomNavigationBar(
+        //page Name BtmNebBar onTabBar
+        onTap: onTapBar,
+
+        selectedItemColor: Colors.white,
+        unselectedItemColor: systemGrey,
+        selectedFontSize: 16,
+        unselectedFontSize: 16,
+        showUnselectedLabels: true,
+        items: [
+          BottomNavigationBarItem(
+              backgroundColor: secondary,
+              icon: SvgPicture.asset(
+                'assets/image/Layoutlogo.svg',
+                width: 30,
+                height: 30,
+              ),
+              label: 'My Task'),
+          BottomNavigationBarItem(
+              backgroundColor: secondary,
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              backgroundColor: secondary,
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: 'Calender'),
+          BottomNavigationBarItem(
+              backgroundColor: secondary,
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: 'Home'),
+        ],
+      ),
+    );
+  }
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:task_menagementapp/HomePage.dart';
+import 'package:task_menagementapp/Model/Color_Text.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen1.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen2.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen3.dart';
+import 'package:task_menagementapp/SplashScreen/SplashScreen4.dart';
+
+class BtmNevBar extends StatefulWidget {
+  BtmNevBar({Key? key}) : super(key: key);
+
+  @override
+  State<BtmNevBar> createState() => _BtmNevBarState();
+}
+
+class _BtmNevBarState extends State<BtmNevBar> {
+//page Name BtmNebBar
+  int _currentIndex = 0;
+
+  final List<Widget> _children = [
+    HomePage(),
+    SplashScreen1(),
+    SplashScreen2(),
+    SplashScreen3(),
+  ];
+
+  void onTapBar(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+// end page Name BtmNebBar
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _children[_currentIndex],
+      // floatingActionButton
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            _currentIndex = 0;
+          });
+        },
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      // bottomNavigationBar
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: const BoxDecoration(
+          color: secondary,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        //Buttion_1
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 0;
+                });
+              },
+              icon: _currentIndex == 0
+                  ? const Icon(
+                      Icons.home_filled,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.home_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            //Buttion_2
+            Padding(
+              padding: const EdgeInsets.only(right: 60),
+              child: IconButton(
+                enableFeedback: false,
+                onPressed: () {
+                  setState(() {
+                    _currentIndex = 1;
+                  });
+                },
+                icon: _currentIndex == 1
+                    ? const Icon(
+                        Icons.work_rounded,
+                        color: Colors.white,
+                        size: 35,
+                      )
+                    : const Icon(
+                        Icons.work_outline_outlined,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+              ),
+            ),
+            //Buttion_3
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 2;
+                });
+              },
+              icon: _currentIndex == 2
+                  ? const Icon(
+                      Icons.widgets_rounded,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.widgets_outlined,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+            //Buttion_4
+            IconButton(
+              enableFeedback: false,
+              onPressed: () {
+                setState(() {
+                  _currentIndex = 3;
+                });
+              },
+              icon: _currentIndex == 3
+                  ? const Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 35,
+                    )
+                  : const Icon(
+                      Icons.person_outline,
+                      color: Colors.white,
+                      size: 35,
+                    ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+

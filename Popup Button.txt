@@ -1,0 +1,30 @@
+PopupMenuButton<String>(
+              onSelected: (value) {
+                print(value);
+              },
+              itemBuilder: (BuildContext contesxt) {
+                return [
+                  PopupMenuItem(
+                    // ignore: sort_child_properties_last
+                    child: InkWell(
+                        onTap: () {
+                         
+                        },
+                        child: const Text("Add New")),
+                    value: "Add New",
+                  ),
+                  PopupMenuItem(
+                    // ignore: sort_child_properties_last
+                    child: InkWell(
+                        onTap: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => SettingsPage()));
+                        },
+                        child: const Text("Settings")),
+                    value: "Settings",
+                  ),
+                ];
+              },
+            )

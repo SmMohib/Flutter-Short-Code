@@ -1,0 +1,22 @@
+For windows:
+keytool -list -v -keystore c:\users\Mohib\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+For mac/linux:
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+debug.keystore path: C:\Users\91819\.android
+
+
+.......
+
+Put this in CMD or VS Code Terminal
+----------------------COPY Paste ------------
+Windows Method
+keytool list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+Linux  method
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+.....
+
+
+keytool -list -v -keystore C:\Users\91819\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android

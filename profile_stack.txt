@@ -1,0 +1,210 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Profile"),
+          centerTitle: true,
+        ),
+        body: ListView(
+          padding: EdgeInsets.all(7),
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 80,
+                        backgroundImage: NetworkImage(
+                            "data:image/jpeg;base64,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"),
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        right: 10,
+                        child: CircleAvatar(
+                          radius: 15,
+                          child: Icon(
+                            Icons.add_a_photo_sharp,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: (Text(
+                'This is Google Fonts',
+                style: GoogleFonts.getFont('Lato'),
+              )),
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: (Text(
+                "App Developer",
+                style: TextStyle(fontSize: 20),
+              )),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Colors.grey,
+              indent: 100,
+              endIndent: 100,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Card(
+              color: Colors.blue,
+              margin: EdgeInsets.all(5),
+              child: ListTile(
+                tileColor: Colors.blue,
+                leading: Icon(Icons.call),
+                title: Text(
+                  "017033-456467",
+                  style: TextStyle(fontSize: 16),
+                  textScaleFactor: 1.5,
+                ),
+
+                shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(10)),
+                // selected: true,
+                //  selectedTileColor: Colors.orange[400],
+                contentPadding: EdgeInsets.all(5),
+                onTap: () {
+                  print('Hello');
+                },
+              ),
+            ),
+            Card(
+              color: Colors.blue,
+              margin: EdgeInsets.all(5),
+              child: ListTile(
+                tileColor: Colors.blue,
+                leading: Icon(Icons.email),
+                title: Text(
+                  "Example@gmail.com",
+                  style: TextStyle(fontSize: 16),
+                  textScaleFactor: 1.5,
+                ),
+
+                shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(10)),
+                // selected: true,
+                //  selectedTileColor: Colors.orange[400],
+                contentPadding: EdgeInsets.all(5),
+                onTap: () {
+                  print('Hello');
+                },
+              ),
+            ),
+            Card(
+              color: Colors.blue,
+              margin: EdgeInsets.all(5),
+              child: ListTile(
+                tileColor: Colors.blue,
+                leading: Icon(Icons.location_city),
+                title: Text(
+                  "Dhanmondi 32,Dhaka , Bangladesh",
+                  style: TextStyle(fontSize: 16),
+                  textScaleFactor: 1.5,
+                ),
+
+                shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(10)),
+                // selected: true,
+                //  selectedTileColor: Colors.orange[400],
+                contentPadding: EdgeInsets.all(5),
+                onTap: () {
+                  print('Hello');
+                },
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 40,
+                  backgroundImage: NetworkImage(
+                      "https://i0.wp.com/www.fanslite.com/wp-content/uploads/2019/09/Facebook-app-download.png?fit=432%2C350&ssl=1"),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(
+                            "https://cdn2.hubspot.net/hubfs/521324/youtube%20icon.png"),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(
+                            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png"),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Column(
+              children: [
+                Container(
+                  child: Text(
+                    "Flow Me",
+                    style: TextStyle(fontSize: 25, color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

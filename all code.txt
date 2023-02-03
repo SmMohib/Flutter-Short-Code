@@ -1,0 +1,235 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  get style => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
+          ],
+          selectedItemColor: Colors.amber[800],
+        ),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Show Snackbar',
+            onPressed: () {},
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.add_alert),
+              tooltip: 'Show Snackbar',
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.search),
+              tooltip: 'Show Snackbar',
+              onPressed: () {},
+            ),
+          ],
+          title: Text(
+            "Home",
+          ),
+          centerTitle: true,
+        ),
+        body: ListView(
+          children: <Widget>[
+            Container(
+              height: 200,
+              width: 200,
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.greenAccent,
+                  border: Border.all()),
+              child: Image.network(
+                'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjI_wnepTyyKMcnJT2eYq-efsQUffwRzVh-gkJVMe0lRAddvOcQgbHkdfO6s9UQIoi7u3CSi9yOfFePrtGxvNcOymuZedaA7p9urHEbb1wrqDyD0fVG-Ug3D3CwwBTqrZ-jT0pzXQFVWayBsINl0Q5FZxc4EoKJMzdxpBGyUwuyiEEgCCsIU1hOlJI4/s1280/%E0%A6%B8%E0%A7%87%E0%A6%B0%E0%A6%BE%20%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%AC%E0%A6%B8%E0%A6%BE%E0%A6%B0%20%E0%A6%A7%E0%A6%BE%E0%A6%B0%E0%A6%A3%E0%A6%BE%20%E0%A6%AF%E0%A6%BE%20%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BF%202022%20%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A7%87%20%E0%A6%B6%E0%A7%81%E0%A6%B0%E0%A7%81%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%AA%E0%A6%BE%E0%A6%B0%E0%A7%87%E0%A6%A8.png',
+              ),
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Enabled'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                new RaisedButton(
+                  color: Colors.green,
+                  padding: EdgeInsets.all(15),
+                  child: new Text('Hello'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 70,
+                  width: 300,
+                  margin: EdgeInsets.all(20),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.red),
+                  child: Text(
+                    " Sm MOHIB",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(padding: EdgeInsets.all(20)),
+                Container(
+                  height: 80,
+                  width: 130,
+                  margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.blue,
+                  ),
+                  child: Text(
+                    "widget",
+                    style: TextStyle(fontSize: 25),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Container(
+                  height: 80,
+                  width: 130,
+                  margin: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.blue,
+                  ),
+                  child: Text(
+                    "widget",
+                    style: TextStyle(fontSize: 25),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              child: Text(
+                " container widget",
+                style: TextStyle(fontSize: 25),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(15),
+                  margin: EdgeInsets.all(5),
+                  color: Colors.blue,
+                  height: 200,
+                  alignment: Alignment.center,
+                  width: 400,
+                  child: Text(
+                    "a business, but you're having a tough time articulating your ideaa business, but you're having a tough time articulating your idea.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(16.0),
+                primary: Colors.red,
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              onPressed: () {},
+              child: const Text('Gradient'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(15),
+                  margin: EdgeInsets.all(5),
+                  color: Colors.blue,
+                  height: 200,
+                  alignment: Alignment.center,
+                  width: 400,
+                  child: Text(
+                    "a business, but you're having a tough time articulating your ideaa business, but you're having a tough time articulating your idea.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.message),
+                title: Text('Messages'),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
